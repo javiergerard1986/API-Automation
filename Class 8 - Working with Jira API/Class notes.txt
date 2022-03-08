@@ -1,0 +1,4 @@
+1. Download JIRA from https://www.atlassian.com/software/jira/download
+2. API Documentation:https://docs.atlassian.com/software/jira/docs/api/REST/8.5.15/
+3. Authenticate to JIRA: https://developer.atlassian.com/server/jira/platform/cookie-based-authentication/
+4. jsoneditoronline.org

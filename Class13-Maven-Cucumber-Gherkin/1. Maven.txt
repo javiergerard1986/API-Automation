@@ -1,0 +1,28 @@
+------------------------------
+Setting Maven Project
+------------------------------
+Why Maven?
+a. Central repository to get dependencies.
+b. Maintaining common structure across the organization
+c. Flexibility in integrating with CI tools
+d. Plugins for Test framework execution
+
+------------------
+
+1. Download Maven https://maven.apache.org/download.cgi
+2. Extract it
+3. Create MAVEN_HOME variable (example: C:\work\apache-maven-3.8.4)
+4. Add it to the Path variable (example: %MAVEN_HOME%\bin)
+5. Open a CMD, execute the mvn --version command in order to check that is properly installed and set
+6. Open a CMD, navigate to the path were the maven project will be created
+6. mvn archetype:generate -DMvnWorkshop -DgroupId=qaclickacademy -DartifactId=Mavenjava -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+7. Import the created maven project to eclipse:
+	7.1. In the CMD navigate to the project root path (example: C:\Users\Usuario\Documents\Workshops\Rest API Testing\Class 13 - Maven\Mavenjava, it is where the pom.xml file is located)
+	7.2. Execute the next command: mvn eclipse:eclipse
+	7.3. Navigate into the next link and ensure that your Eclipse versino contains Maven Integration: https://projects.eclipse.org/projects/technology.m2e. Other way to check it: Open Eclipse -> Window -> Preferences -> Check that the Maven option is displayed in the left menu bar. If is displayed, it is supported.
+	7.4. Where are downloaded the dependencies: Open Eclipse -> Window -> Preferences -> Maven (left menu bar) -> User Settings -> In the "Local Repository..." field the path is displayed.
+8. Open Maven project:
+	8.1. Open Eclipse
+	8.2. File -> Import -> Maven -> Existing Maven Projects -> Next
+		8.2.1. Browse: Select the project path (example: the path until MavenJava, the one that has the pom.xml file)
+		8.2.1. Click on the FInish button

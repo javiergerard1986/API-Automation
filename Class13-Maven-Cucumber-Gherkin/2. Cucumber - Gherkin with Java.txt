@@ -1,0 +1,125 @@
+------------------------------
+Cucumber Framework
+------------------------------
+What is Framework?
+In any Real time project whenever Automation scripts are developed, one should come with an
+Execution system called framework to run and maintain Automated tests.
+
+What is cucumber?
+Cucumber is the BDD (Behavior Data Driven) Framework for running automated tests.
+Cucumber does not Automate your testcases.
+
+When my tests are already automated and can run, what cucumber does?
+Data driven, Parameterization, Execution controls, Hooks, Reports, Automation Utilities.
+
+When you say automated tests, what type of Automation testcases does cucumber support?
+Any test (web, mobile, api, unit testing) which is written in Java/Rubby supported by Cucumber.
+
+------------------------------
+Gherkin
+------------------------------
+1. What is Gherkin?
+It is a Business Readable, Domain Specific Langauge that lets you describe software behavior.
+
+Example: Pop up message is displayed when buttons are clicked and errors are gone
+
+-----------------
+
+2. Keywords in cucumber: Scenario, Feature, Feature file, Scenario outline, Step Definition
+
+-----------------
+
+3. Scenarios:
+In Cucumber Testcaases are represented as Scenarios.
+
+Scenarios contain steps which are equivalent to test steps and use the following keywords (Gherkin syntax)
+to denote them: Given, When, Then, But and And (case sensitive).
+
+	- Given: preconditions are mentioned in the Given keyword
+	- When: The purpose of the When Steps is to describe the user action
+	- Then: The purpose of the Then Steps is to observe the expected output. The observations should be related to the business value/benefit of your Feature description.
+
+Example:
+	Secnario: Make Minimum Due payment
+		Given user is on PayC Credit card page
+		When user fills all details and select Minimum amount option
+		And user clicks on Pay button
+		Then Credit Card confirmation page is displayed
+		And payment reference code is displayed
+		But error message is not displayed
+
+When we specify a business requirment, sometimes there are multiple pre-conditions, user actions and expected outcomes.
+
+-----------------
+
+4. Features: a feature represents a business requirement.
+Feature files acts as a Test Suite that contains all the scenarios of that feature (test suite)
+
+In cucumber, a feature files contain scenarios
+
+Example:
+Feature: Credit card payment
+Scenario: Credit card payment
+Scneario: Make minimum due payment
+Scenario: Pay Statement Balance
+Scenario: Enter another Amount as 0
+
+To create an scenario in cucumber, you will need to create a file ".feature"
+
+-----------------
+
+5. Step definitions:
+Every keyword defines a stepDefinition, example: When the user is logged in
+We will have a stepDefinition File that will contain the logic for the "the user is logged in" definition. This definition will be match with a regular expression, and that 
+regular expression will contain a method with the required logic and steps to log an user into the application.
+
+-----------------
+
+6. Cucumber installation:
+6.1. Install the "Natural" plugin
+	6.1.1. In Eclipse -> Help -> Install new software
+	6.1.2. Click on the "Add" button -> Name: natural, Location: https://rlogiacco.github.io/Natural
+	6.1.3. Complete the plugin installation
+
+-----------------
+
+7. Create cucumber project:
+	7.1. The cucumber project skeleton could be provided by maven. So, File -> New -> Project -> Maven -> Maven Project -> Next
+	7.2. Click Next again
+	7.3. Select the maven-archetype-quickstart template (this skeleton is supported by cucumber), and then click on the "Next" button 
+	7.4. Select the GroupId, and the ArtifactId (projectName)
+	7.5. Add the next dependencies in the pom.xml file:
+		7.5.1. Junit:
+			<dependency>
+      				<groupId>junit</groupId>
+			        <artifactId>junit</artifactId>
+			        <version>3.8.1</version>
+		        </dependency>
+		7.5.2. Cucumber JVM: Junit
+			<dependency>
+			    	<groupId>info.cukes</groupId>
+			    	<artifactId>cucumber-junit</artifactId>
+			    	<version>1.2.6</version>
+			    	<type>pom</type>
+			</dependency>
+		7.5.3: Cucumber JVM: Java:
+			<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+				<dependency>
+				    <groupId>io.cucumber</groupId>
+				    <artifactId>cucumber-java</artifactId>
+				    <version>7.2.3</version>
+				</dependency>
+
+7.6. If this does not work:
+	7.6.1. Uninstall the Natural plugin
+	7.6.2. Install the Cucumber Eclipse Plugin
+	7.6.3. Convert the project to a Cucumber project (Right click on the project root folder, configure, convert project, cucumber project)
+	7.6.4. Run the features as cucumber
+
+-----------------
+
+8. Add the Tidy Gherking plugin to your chrome browser: https://chrome.google.com/webstore/detail/tidy-gherkin/nobemmencanophcnicjhfhnjiimegjeo?hl=es
+8.1. Use the application to generate your stepDefinitions
+
+
+		

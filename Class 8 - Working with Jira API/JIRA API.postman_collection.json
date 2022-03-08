@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "c05d591c-8d6c-4a2c-ad91-29d071a9dbe1",
+		"name": "JIRA API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"pm.globals.set(\"jiraSessionId\", response.session.value);\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"javiergerard1986\", \"password\": \"Yb5Nmrho!\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/rest/auth/1/session",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"rest",
+						"auth",
+						"1",
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"pm.globals.set(\"issueId\", response.id);\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "cookie",
+						"value": "JSESSIONID={{jiraSessionId}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"fields\": {\r\n            \"project\": {\r\n                \"key\": \"RSA\"\r\n            },\r\n            \"summary\": \"Visa Credit card defect\",\r\n            \"description\": \"Creating my second issue via API\",\r\n            \"issuetype\": {\r\n                \"name\": \"Bug\"\r\n            }\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/rest/api/2/issue",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add comment to issue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"pm.globals.set(\"commentId\", response.id);\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "contentType",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "cookie",
+						"value": "JSESSIONID={{jiraSessionId}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\": \"Hey I have commented from REST API.\",\r\n    \"visibility\": {\r\n        \"type\": \"role\",\r\n        \"value\": \"Administrators\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/rest/api/2/issue/{{issueId}}/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"{{issueId}}",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "contentType",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "cookie",
+						"value": "JSESSIONID={{jiraSessionId}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"body\": \"I updated the comment from the REST ATPI\",\r\n    \"visibility\": {\r\n        \"type\": \"role\",\r\n        \"value\": \"Administrators\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/rest/api/2/issue/{{issueId}}/comment/{{commentId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"{{issueId}}",
+						"comment",
+						"{{commentId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete issue",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "contentType",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "cookie",
+						"value": "JSESSIONID={{jiraSessionId}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/rest/api/2/issue/{{issueId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"{{issueId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
