@@ -20,15 +20,24 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 	
 	 @Given("^a valid AddPlace payload$")
 	 public void a_valid_addplace_payload() {
-		// Set the request builder
-		this.buildRequestSpecification();
-		// Set the response builder 
-		this.buildResponseSpecification(200);
+		// Set request and response builder
+		 this.setRequestAndResponseBuilder();
 			 
 		// Define request to execute
 		this.requestSpec = given()
 				.spec(this.requestSpec)
-				.body(testDataBuilder.createPlaceObject());
+				.body(testDataBuilder.createHardcodedPlaceObject());
+	 }
+	 
+	 @Given("a valid AddPlace payload with {string} {string} {double} {double}")
+	 public void a_valid_addplace_payload_with(String address, String name, double latitude, double longitude) {
+		// Set request and response builder
+		 this.setRequestAndResponseBuilder();
+			 
+		// Define request to execute
+		this.requestSpec = given()
+				.spec(this.requestSpec)
+				.body(testDataBuilder.createPlaceObject(address, name, latitude, longitude));
 	 }
 	 
 	 @When("^user calls the AddPlace endpoint with post http request$")
@@ -53,6 +62,13 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 	 public void scope_in_response_body_is_something(String scope) {
 		 AddPlaceResponse addPlace = this.response.as(AddPlaceResponse.class);
 		 assertEquals(addPlace.getScope(), scope);
+	 }
+	 
+	 private void setRequestAndResponseBuilder(){
+		// Set the request builder
+		this.buildRequestSpecification();
+		// Set the response builder 
+		this.buildResponseSpecification(200);
 	 }
 	
 }

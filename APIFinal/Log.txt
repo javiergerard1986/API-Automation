@@ -27,7 +27,7 @@ Body:
     "language": "Frontline house"
 }
 HTTP/1.1 200 OK
-Date: Fri, 11 Mar 2022 02:39:35 GMT
+Date: Fri, 11 Mar 2022 13:31:11 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -40,8 +40,149 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "fc061e9bb1ff584fb141ebd49448a12b",
+    "place_id": "70e5c665a9c25adefd0ec6d91d6d3341",
     "scope": "APP",
-    "reference": "a83a6aa182b77f2f28ef0b22373246d2a83a6aa182b77f2f28ef0b22373246d2",
-    "id": "a83a6aa182b77f2f28ef0b22373246d2"
+    "reference": "dcc2005bcae4f9c587731e93102ac226dcc2005bcae4f9c587731e93102ac226",
+    "id": "dcc2005bcae4f9c587731e93102ac226"
+}
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.383432,
+        "lng": 33.427524
+    },
+    "accuracy": 50,
+    "name": "La Torteria",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Maldonado 1238",
+    "types": [
+        "shoe park",
+        "shop"
+    ],
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
+}
+HTTP/1.1 200 OK
+Date: Fri, 11 Mar 2022 13:31:13 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 194
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": "OK",
+    "place_id": "5e7821a51de05205bbfdcd5fc2f4fdeb",
+    "scope": "APP",
+    "reference": "e1b3dba7932a64091582e023c2c8bdd3e1b3dba7932a64091582e023c2c8bdd3",
+    "id": "e1b3dba7932a64091582e023c2c8bdd3"
+}
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.381234,
+        "lng": 33.428564
+    },
+    "accuracy": 50,
+    "name": "Confiteria Roma",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Avenida Centenario 3313",
+    "types": [
+        "shoe park",
+        "shop"
+    ],
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
+}
+HTTP/1.1 200 OK
+Date: Fri, 11 Mar 2022 13:31:15 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 194
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": "OK",
+    "place_id": "f0292af95a7a723b919b01222b21b9e0",
+    "scope": "APP",
+    "reference": "4e8155f60e969115e4b768c02051632d4e8155f60e969115e4b768c02051632d",
+    "id": "4e8155f60e969115e4b768c02051632d"
+}
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.3835987,
+        "lng": 33.425246
+    },
+    "accuracy": 50,
+    "name": "Bar La Esperanza",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Larravide 1212",
+    "types": [
+        "shoe park",
+        "shop"
+    ],
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
+}
+HTTP/1.1 200 OK
+Date: Fri, 11 Mar 2022 13:31:17 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 194
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": "OK",
+    "place_id": "4d2bfdeb88413e05b65a116c68ce307c",
+    "scope": "APP",
+    "reference": "df019533220aed60f1b2d46236c834f4df019533220aed60f1b2d46236c834f4",
+    "id": "df019533220aed60f1b2d46236c834f4"
 }
