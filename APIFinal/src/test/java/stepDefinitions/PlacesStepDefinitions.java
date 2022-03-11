@@ -40,7 +40,7 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 				.body(testDataBuilder.createPlaceObject(address, name, latitude, longitude));
 	 }
 	 
-	 @When("^user calls the AddPlace endpoint with post http request$")
+	 @When("user calls the AddPlace endpoint with post http request")
 	 public void user_calls_the_addplaceapi_with_post_http_request() {
 	     response = this.requestSpec
 	    		 .when().post(this.propertiesLoader.getGlobalValue("resource") + this.propertiesLoader.getGlobalValue("addPlace"))
@@ -58,7 +58,7 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 	   assertEquals(js.get(param), value);
 	 }
 	 
-	 @And("scope in response body is \"([^\"]*)\"$")
+	 @And("scope in response body is {string}")
 	 public void scope_in_response_body_is_something(String scope) {
 		 AddPlaceResponse addPlace = this.response.as(AddPlaceResponse.class);
 		 assertEquals(addPlace.getScope(), scope);
