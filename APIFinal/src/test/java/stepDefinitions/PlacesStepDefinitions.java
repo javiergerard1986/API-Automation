@@ -3,6 +3,7 @@ package stepDefinitions;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
+import config.APIResources;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -40,10 +41,11 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 				.body(testDataBuilder.createPlaceObject(address, name, latitude, longitude));
 	 }
 	 
-	 @When("user calls the AddPlace endpoint with post http request")
-	 public void user_calls_the_addplaceapi_with_post_http_request() {
-	     response = this.requestSpec
-	    		 .when().post(this.propertiesLoader.getGlobalValue("resource") + this.propertiesLoader.getGlobalValue("addPlace"))
+	 @When("user calls the {string} with post http request")
+	 public void user_calls_the_with_post_http_request(String resource) {
+	     APIResources apiResource = APIResources.valueOf(resource);
+		 response = this.requestSpec
+	    		 .when().post(apiResource.getResource())
 	    		 .then().spec(this.responseSpec).extract().response();
 	 }
 	 
