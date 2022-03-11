@@ -21,18 +21,22 @@ public abstract class BaseStepDefinitions {
 	private PropertiesLoader propertiesLoader = PropertiesLoader.getInstance();
 	
 	protected void buildRequestSpecification() {
-		this.requestSpec = new RequestSpecBuilder()
-				.setBaseUri(this.propertiesLoader.getGlobalValue("baseUrl"))
-				.addQueryParam(this.propertiesLoader.getGlobalValue("keyQP"), this.propertiesLoader.getGlobalValue("keyValue"))
-				.addFilter(RequestLoggingFilter.logRequestTo(this.logger.getPrintStream()))
-				.addFilter(ResponseLoggingFilter.logResponseTo(this.logger.getPrintStream()))
-				.setContentType(ContentType.JSON).build();	
+		if(this.requestSpec == null) {
+			this.requestSpec = new RequestSpecBuilder()
+					.setBaseUri(this.propertiesLoader.getGlobalValue("baseUrl"))
+					.addQueryParam(this.propertiesLoader.getGlobalValue("keyQP"), this.propertiesLoader.getGlobalValue("keyValue"))
+					.addFilter(RequestLoggingFilter.logRequestTo(this.logger.getPrintStream()))
+					.addFilter(ResponseLoggingFilter.logResponseTo(this.logger.getPrintStream()))
+					.setContentType(ContentType.JSON).build();
+		}
 	}
 	
 	protected void buildResponseSpecification(int statusCode) {
-		this.responseSpec = new ResponseSpecBuilder()
-				.expectStatusCode(200)
-				.expectContentType(ContentType.JSON).build();
+		if(this.responseSpec == null) {
+			this.responseSpec = new ResponseSpecBuilder()
+					.expectStatusCode(200)
+					.expectContentType(ContentType.JSON).build();
+		}
 	}
 	
 	protected void setResponse(APIResources resource, String httpMethod) {
