@@ -2,14 +2,12 @@ package stepDefinitions;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
-
 import config.APIResources;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import pojo.responses.AddPlaceResponse;
 import resources.TestDataBuilder;
 
@@ -17,7 +15,6 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 
 	// API variables
 	TestDataBuilder testDataBuilder = new TestDataBuilder();
-	Response response;
 	
 	 @Given("^a valid AddPlace payload$")
 	 public void a_valid_addplace_payload() {
@@ -41,12 +38,10 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 				.body(testDataBuilder.createPlaceObject(address, name, latitude, longitude));
 	 }
 	 
-	 @When("user calls the {string} with post http request")
-	 public void user_calls_the_with_post_http_request(String resource) {
+	 @When("user calls the {string} with {string} http request")
+	 public void user_calls_the_with_post_http_request(String resource, String httpMethod) {
 	     APIResources apiResource = APIResources.valueOf(resource);
-		 response = this.requestSpec
-	    		 .when().post(apiResource.getResource())
-	    		 .then().spec(this.responseSpec).extract().response();
+		 this.setResponse(apiResource, httpMethod);
 	 }
 	 
 	 @Then("the API call got success with status code {int}")
