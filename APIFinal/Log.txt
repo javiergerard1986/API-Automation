@@ -27,7 +27,7 @@ Body:
     "language": "Frontline house"
 }
 HTTP/1.1 200 OK
-Date: Fri, 11 Mar 2022 17:27:18 GMT
+Date: Fri, 11 Mar 2022 18:08:57 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -40,10 +40,64 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "a401ae38ff5afbc8e2a7d4426bae299d",
+    "place_id": "a005041589a85eb0dbe71747da426366",
     "scope": "APP",
-    "reference": "0c178e6107bdbd31acb8f9b811ff95880c178e6107bdbd31acb8f9b811ff9588",
-    "id": "0c178e6107bdbd31acb8f9b811ff9588"
+    "reference": "293f435dd4ee632dc4630ea7697ecf89293f435dd4ee632dc4630ea7697ecf89",
+    "id": "293f435dd4ee632dc4630ea7697ecf89"
+}
+Request method:	GET
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=a005041589a85eb0dbe71747da426366
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+				place_id=a005041589a85eb0dbe71747da426366
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.383494,
+        "lng": 33.427362
+    },
+    "accuracy": 50,
+    "name": "Frontline house",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "29, side layout, cohen 09",
+    "types": [
+        "shoe park",
+        "shop"
+    ],
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
+}
+HTTP/1.1 200 OK
+Date: Fri, 11 Mar 2022 18:09:00 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 276
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "location": {
+        "latitude": "-38.383494",
+        "longitude": "33.427362"
+    },
+    "accuracy": "50",
+    "name": "Frontline house",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "29, side layout, cohen 09",
+    "types": "shoe park,shop",
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
 }
 Request method:	POST
 Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
@@ -74,7 +128,7 @@ Body:
     "language": "Frontline house"
 }
 HTTP/1.1 200 OK
-Date: Fri, 11 Mar 2022 17:27:20 GMT
+Date: Fri, 11 Mar 2022 18:09:04 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -87,10 +141,64 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "9c2f8d864b89645f0cc9df001559817d",
+    "place_id": "7fca2861f1716e73752b6b86af3babb9",
     "scope": "APP",
-    "reference": "be2ff7d30a35d2901bd98d701a92beaabe2ff7d30a35d2901bd98d701a92beaa",
-    "id": "be2ff7d30a35d2901bd98d701a92beaa"
+    "reference": "44c53b555b34fe371c0c880ee199809244c53b555b34fe371c0c880ee1998092",
+    "id": "44c53b555b34fe371c0c880ee1998092"
+}
+Request method:	GET
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=7fca2861f1716e73752b6b86af3babb9
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+				place_id=7fca2861f1716e73752b6b86af3babb9
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.383432,
+        "lng": 33.427524
+    },
+    "accuracy": 50,
+    "name": "La Torteria",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Maldonado 1238",
+    "types": [
+        "shoe park",
+        "shop"
+    ],
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
+}
+HTTP/1.1 200 OK
+Date: Fri, 11 Mar 2022 18:09:06 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 261
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "location": {
+        "latitude": "-38.383432",
+        "longitude": "33.427524"
+    },
+    "accuracy": "50",
+    "name": "La Torteria",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Maldonado 1238",
+    "types": "shoe park,shop",
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
 }
 Request method:	POST
 Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
@@ -121,7 +229,7 @@ Body:
     "language": "Frontline house"
 }
 HTTP/1.1 200 OK
-Date: Fri, 11 Mar 2022 17:27:22 GMT
+Date: Fri, 11 Mar 2022 18:09:10 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -134,10 +242,64 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "d81579054e4d24c8cbe628e3088908b8",
+    "place_id": "f6e31beeba355f2f1a6c96d14df16dcd",
     "scope": "APP",
-    "reference": "dff345fec9b525f279cda3e9f4740f21dff345fec9b525f279cda3e9f4740f21",
-    "id": "dff345fec9b525f279cda3e9f4740f21"
+    "reference": "c69906f3c2ae35aae668b6b5fd11293cc69906f3c2ae35aae668b6b5fd11293c",
+    "id": "c69906f3c2ae35aae668b6b5fd11293c"
+}
+Request method:	GET
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=f6e31beeba355f2f1a6c96d14df16dcd
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+				place_id=f6e31beeba355f2f1a6c96d14df16dcd
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.381234,
+        "lng": 33.428564
+    },
+    "accuracy": 50,
+    "name": "Confiteria Roma",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Avenida Centenario 3313",
+    "types": [
+        "shoe park",
+        "shop"
+    ],
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
+}
+HTTP/1.1 200 OK
+Date: Fri, 11 Mar 2022 18:09:12 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 274
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "location": {
+        "latitude": "-38.381234",
+        "longitude": "33.428564"
+    },
+    "accuracy": "50",
+    "name": "Confiteria Roma",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Avenida Centenario 3313",
+    "types": "shoe park,shop",
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
 }
 Request method:	POST
 Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
@@ -168,7 +330,7 @@ Body:
     "language": "Frontline house"
 }
 HTTP/1.1 200 OK
-Date: Fri, 11 Mar 2022 17:27:24 GMT
+Date: Fri, 11 Mar 2022 18:09:17 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -181,8 +343,62 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "1afd67bfc2eedd9594e4a8974a254387",
+    "place_id": "0b0efaff04cfe912d42d3d57a2b4cadc",
     "scope": "APP",
-    "reference": "cd494904cc4ce9473b87e07b05b271c2cd494904cc4ce9473b87e07b05b271c2",
-    "id": "cd494904cc4ce9473b87e07b05b271c2"
+    "reference": "5f4c066ec467fa8d3cdcd89260152a5b5f4c066ec467fa8d3cdcd89260152a5b",
+    "id": "5f4c066ec467fa8d3cdcd89260152a5b"
+}
+Request method:	GET
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=0b0efaff04cfe912d42d3d57a2b4cadc
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+				place_id=0b0efaff04cfe912d42d3d57a2b4cadc
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.3835987,
+        "lng": 33.425246
+    },
+    "accuracy": 50,
+    "name": "Bar La Esperanza",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Larravide 1212",
+    "types": [
+        "shoe park",
+        "shop"
+    ],
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
+}
+HTTP/1.1 200 OK
+Date: Fri, 11 Mar 2022 18:09:18 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 267
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "location": {
+        "latitude": "-38.3835987",
+        "longitude": "33.425246"
+    },
+    "accuracy": "50",
+    "name": "Bar La Esperanza",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "Larravide 1212",
+    "types": "shoe park,shop",
+    "website": "https://rahulshettyacademy.com",
+    "language": "Frontline house"
 }

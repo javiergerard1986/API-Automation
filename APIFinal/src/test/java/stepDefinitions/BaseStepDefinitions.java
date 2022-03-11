@@ -39,7 +39,7 @@ public abstract class BaseStepDefinitions {
 		}
 	}
 	
-	protected void setResponse(APIResources resource, String httpMethod) {
+	protected void setAndExecuteRequest(APIResources resource, String httpMethod) {
 		if(httpMethod.equals("post")) {
 			this.response = this.requestSpec
 					 .when().post(resource.getResource())
@@ -52,8 +52,7 @@ public abstract class BaseStepDefinitions {
 			this.response = this.requestSpec
 					 .when().delete(resource.getResource())
 					 .then().spec(this.responseSpec).extract().response();
-		}
-			
+		}		
 	}
 
 }
