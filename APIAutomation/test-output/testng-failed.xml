@@ -3,11 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="requestResponseBuilder.SpecBuilderTests">
+      <class name="jiraAPI.JIRATests">
         <methods>
-          <include name="addPlace"/>
+          <include name="createIssue"/>
+          <include name="addCommentToIssue"/>
+          <include name="addAttachmentToIssue"/>
+          <include name="jiraLogin"/>
+          <include name="getIssue"/>
         </methods>
-      </class> <!-- requestResponseBuilder.SpecBuilderTests -->
+      </class> <!-- jiraAPI.JIRATests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
