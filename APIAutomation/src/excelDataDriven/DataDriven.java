@@ -70,6 +70,7 @@ public class DataDriven {
 					}
 				}
 			}
+			workBook.close();
 		} catch(IOException ex) {
 			System.out.println("Error: " + ex.getMessage());
 		}

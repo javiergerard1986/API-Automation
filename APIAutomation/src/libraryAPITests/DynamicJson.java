@@ -1,6 +1,7 @@
 package libraryAPITests;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -27,6 +28,19 @@ public class DynamicJson {
 		// Add book
 		RestAssured.baseURI = baseUrl;
 		String response = given().log().all().header(contentType, contentTypeValue).body(Payload.addBookPayload(isbn, aisle))
+		.when().post(resource + addBook)
+		.then().assertThat().statusCode(200).extract().response().asString();
+		System.out.println(response);
+
+		JsonPath jsonResponse = MethodsUtils.rawToJson(response);
+		createdBooksIds.add(jsonResponse.get("ID"));
+	}
+	
+	@Test(dataProvider="BooksData")
+	public void addBookUsingHashMapAsPayload(String isbn, int aisle) {
+		// Add book
+		RestAssured.baseURI = baseUrl;
+		String response = given().log().all().header(contentType, contentTypeValue).body(Payload.addBookHashMapPayload(isbn, aisle))
 		.when().post(resource + addBook)
 		.then().assertThat().statusCode(200).extract().response().asString();
 		System.out.println(response);

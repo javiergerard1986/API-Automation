@@ -1,5 +1,7 @@
 package libraryAPITests;
 
+import java.util.HashMap;
+
 public class Payload {
 
 	public static String addBookPayload(String isbn, int aisle) {
@@ -12,6 +14,16 @@ public class Payload {
 				"}\r\n" + 
 				"";
 		return body;
+	}
+	
+	public static HashMap<String, Object> addBookHashMapPayload(String isbn, int aisle) {
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("name", "APIAutomation");
+		map.put("isbn", isbn);
+		map.put("aisle", aisle);
+		map.put("author", "Javier Gerard");
+		
+		return map;
 	}
 	
 	public static String deleteBook(String createdBookId) {
