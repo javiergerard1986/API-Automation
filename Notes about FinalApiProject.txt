@@ -1,71 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+1. Tags were not implemented. In order to work with it:
+	a. The tag name is provided over each scenario like: @AddPlaceApi
+	b. When you want to execute all the scenarios inside a tag, you will need to add the tag= "tagName" in the TestRunner class, example: 
+		@CucumberOptions(features="src/test/java/features", glue= {"stepDefinitions"}, tag="@AddPlaceTag")
 
-  <groupId>JavierWS</groupId>
-  <artifactId>APIFinal</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+2. Hooks were not implemented. In order to work with it:
+	a. Create  Hooks package
+	b. Create  Hooks class
+	c. @Before: all the steps inside the method tagged as Before will be executed after each test case. You can create several hooks, and specify with the <@tagName> 
+		which hook will be executed per each test case.
+	d. @After: all the steps inside the method tagged as After will be executed after each test case. You can create several hooks, and specify with the <@tagName>
+		which hook will be executed per each test case.
 
-  <name>APIFinal</name>
-  <url>http://maven.apache.org</url>
+3. Run test cases from CMD using maven commands:
+	a. mvn compile: this command compile the project. 
+	b. mvn test: this command compile the project and ejecute all tests.
+	c. mvn test -Dcucumber.options="--tags @AddPlace": this is the way to execute all the tests under a specified tag, in this case the @AddPlaceTag
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
-  <dependencies>
-    <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
-    <dependency>
-      <groupId>io.rest-assured</groupId>
-      <artifactId>rest-assured</artifactId>
-      <version>4.5.1</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-	<dependency>
-    	<groupId>com.fasterxml.jackson.core</groupId>
-    	<artifactId>jackson-databind</artifactId>
-    	<version>2.13.1</version>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
-	<dependency>
-    	<groupId>com.fasterxml.jackson.core</groupId>
-    	<artifactId>jackson-annotations</artifactId>
-    	<version>2.13.1</version>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-	<dependency>
-    	<groupId>com.fasterxml.jackson.core</groupId>
-    	<artifactId>jackson-core</artifactId>
-    	<version>2.13.1</version>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-	<dependency>
-    	<groupId>com.google.code.gson</groupId>
-    	<artifactId>gson</artifactId>
-    	<version>2.9.0</version>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java8 -->
-	<dependency>
-    	<groupId>io.cucumber</groupId>
-    	<artifactId>cucumber-java</artifactId>
-    	<version>7.2.3</version>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
-	<dependency>
-    	<groupId>io.cucumber</groupId>
-    	<artifactId>cucumber-core</artifactId>
-    	<version>7.2.3</version>
-	</dependency>
-	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
-	<dependency>
-    	<groupId>io.cucumber</groupId>
-    	<artifactId>cucumber-junit</artifactId>
-    	<version>7.2.3</version>
-    	<scope>test</scope>
-	</dependency>
-  </dependencies>
-   <build>
+4. Reporting:
+	a. Add the next content into the pom.xml file after the dependencies section
+		 <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -112,4 +65,6 @@
             </plugin>
         </plugins>
     </build>
-</project>
+
+	b. Specify the path to create the report in the TestRunner class, example: plugin="json:target/jsonReports/cucumber-report.json"
+	c. Execute the mvn test verify command

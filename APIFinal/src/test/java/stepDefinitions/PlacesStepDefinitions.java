@@ -21,8 +21,8 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 	 @Given("^a valid AddPlace payload$")
 	 public void a_valid_addplace_payload() {
 		// Set request and response builders
-		 this.setRequestAndResponseBuilder();
-			 
+		this.setRequestAndResponseBuilder();
+		
 		// Define request to execute
 		this.requestSpec = given()
 				.spec(this.requestSpec)
@@ -32,8 +32,8 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 	 @Given("a valid AddPlace payload with {string} {string} {double} {double}")
 	 public void a_valid_addplace_payload_with(String address, String name, double latitude, double longitude) {
 		// Set request and response builders
-		 this.setRequestAndResponseBuilder();
-			 
+		this.setRequestAndResponseBuilder();
+		
 		// Define request to execute
 		this.requestSpec = given()
 				.spec(this.requestSpec)
@@ -42,9 +42,9 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 	 
 	 @Given("DeletePlace Payload")
 	 public void deletePlace_Payload() {
-		 // Set request and response builders
-		 this.setRequestAndResponseBuilder();
-			 
+		// Set request and response builders
+		this.setRequestAndResponseBuilder();
+		 
 		// Define request to execute
 		this.requestSpec = given()
 				.spec(this.requestSpec)
@@ -92,7 +92,7 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 		 
 	 }
 	 
-	 private void setRequestAndResponseBuilder(){
+	 public void setRequestAndResponseBuilder(){
 		// Set the request builder
 		this.buildRequestSpecification();
 		// Set the response builder 

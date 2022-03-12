@@ -20,6 +20,7 @@ public abstract class BaseStepDefinitions {
 	private Logger logger = Logger.getInstance();
 	private PropertiesLoader propertiesLoader = PropertiesLoader.getInstance();
 	
+	
 	protected void buildRequestSpecification() {
 		if(this.requestSpec == null) {
 			this.requestSpec = new RequestSpecBuilder()
