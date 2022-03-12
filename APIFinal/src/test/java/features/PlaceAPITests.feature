@@ -1,5 +1,6 @@
 Feature: Validating Place API's
 
+@Regression @DeletePlace
 Scenario: Verify that after register a place then the place can be deleted
 Given a valid AddPlace payload
 When user calls the "AddPlaceAPI" with "post" http request
@@ -11,6 +12,7 @@ When user calls the "DeletePlaceAPI" with "post" http request
 Then the API call got success with status code 200
 And "status" in response is "OK"
 
+@Regression @AddPlace
 Scenario Outline: Verify if Place is being succesfully added using the AddPlaceAPI
 Given a valid AddPlace payload with "<address>" "<name>" <latitude> <longitude>
 When user calls the "AddPlaceAPI" with "post" http request
