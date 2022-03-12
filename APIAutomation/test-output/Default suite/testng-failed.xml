@@ -3,15 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="jiraAPI.JIRATests">
+      <class name="libraryAPITests.DynamicJson">
         <methods>
-          <include name="createIssue"/>
-          <include name="addCommentToIssue"/>
-          <include name="addAttachmentToIssue"/>
-          <include name="jiraLogin"/>
-          <include name="getIssue"/>
+          <include name="addBookUsingHashMapFromExcelAsPayload"/>
         </methods>
-      </class> <!-- jiraAPI.JIRATests -->
+      </class> <!-- libraryAPITests.DynamicJson -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

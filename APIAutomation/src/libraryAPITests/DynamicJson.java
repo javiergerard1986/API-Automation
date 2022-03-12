@@ -5,6 +5,8 @@ import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import excelDataDriven.DataDriven;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import static io.restassured.RestAssured.*;
@@ -41,6 +43,22 @@ public class DynamicJson {
 		// Add book
 		RestAssured.baseURI = baseUrl;
 		String response = given().log().all().header(contentType, contentTypeValue).body(Payload.addBookHashMapPayload(isbn, aisle))
+		.when().post(resource + addBook)
+		.then().assertThat().statusCode(200).extract().response().asString();
+		System.out.println(response);
+
+		JsonPath jsonResponse = MethodsUtils.rawToJson(response);
+		createdBooksIds.add(jsonResponse.get("ID"));
+	}
+	
+	@Test
+	public void addBookUsingHashMapFromExcelAsPayload() {
+		DataDriven dd = new DataDriven();
+		ArrayList<String> data = dd.getData("RestAddbook");
+
+		// Add book
+		RestAssured.baseURI = baseUrl;
+		String response = given().log().all().header(contentType, contentTypeValue).body(Payload.addBookHashMapPayload(data.get(1), Integer.parseInt(data.get(2))))
 		.when().post(resource + addBook)
 		.then().assertThat().statusCode(200).extract().response().asString();
 		System.out.println(response);

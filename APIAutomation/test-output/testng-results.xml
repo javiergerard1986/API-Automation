@@ -1,109 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25293" started-at="2022-03-12T18:01:02 UYT" finished-at="2022-03-12T18:01:27 UYT">
+  <suite name="Default suite" duration-ms="29934" started-at="2022-03-12T18:28:47 UYT" finished-at="2022-03-12T18:29:17 UYT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="25293" started-at="2022-03-12T18:01:02 UYT" finished-at="2022-03-12T18:01:27 UYT">
+    <test name="Default test" duration-ms="29934" started-at="2022-03-12T18:28:47 UYT" finished-at="2022-03-12T18:29:17 UYT">
       <class name="libraryAPITests.DynamicJson">
-        <test-method status="PASS" signature="addBook(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBook" duration-ms="4698" started-at="2022-03-12T18:01:02 UYT" data-provider="BooksData" finished-at="2022-03-12T18:01:06 UYT">
+        <test-method status="PASS" signature="addBook(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBook" duration-ms="4911" started-at="2022-03-12T18:28:47 UYT" data-provider="BooksData" finished-at="2022-03-12T18:28:52 UYT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[qwxnosapio]]>
+                <![CDATA[yoantlrdzx]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[9622]]>
+                <![CDATA[604]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addBook -->
-        <test-method status="PASS" signature="addBook(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBook" duration-ms="1843" started-at="2022-03-12T18:01:06 UYT" data-provider="BooksData" finished-at="2022-03-12T18:01:08 UYT">
+        <test-method status="PASS" signature="addBook(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBook" duration-ms="1853" started-at="2022-03-12T18:28:52 UYT" data-provider="BooksData" finished-at="2022-03-12T18:28:54 UYT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[vciehpvwff]]>
+                <![CDATA[wdsinscgaj]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[966]]>
+                <![CDATA[4369]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addBook -->
-        <test-method status="PASS" signature="addBook(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBook" duration-ms="1849" started-at="2022-03-12T18:01:08 UYT" data-provider="BooksData" finished-at="2022-03-12T18:01:10 UYT">
+        <test-method status="PASS" signature="addBook(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBook" duration-ms="1832" started-at="2022-03-12T18:28:54 UYT" data-provider="BooksData" finished-at="2022-03-12T18:28:56 UYT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[umeydgdcqd]]>
+                <![CDATA[oglawsqbvx]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[7921]]>
+                <![CDATA[2358]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addBook -->
-        <test-method status="PASS" signature="addBookUsingHashMapAsPayload(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBookUsingHashMapAsPayload" duration-ms="2107" started-at="2022-03-12T18:01:10 UYT" data-provider="BooksData" finished-at="2022-03-12T18:01:12 UYT">
+        <test-method status="PASS" signature="addBookUsingHashMapAsPayload(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBookUsingHashMapAsPayload" duration-ms="2321" started-at="2022-03-12T18:28:56 UYT" data-provider="BooksData" finished-at="2022-03-12T18:28:58 UYT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[urpvfzavaj]]>
+                <![CDATA[tnsiogrqau]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[9906]]>
+                <![CDATA[3142]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addBookUsingHashMapAsPayload -->
-        <test-method status="PASS" signature="addBookUsingHashMapAsPayload(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBookUsingHashMapAsPayload" duration-ms="1808" started-at="2022-03-12T18:01:12 UYT" data-provider="BooksData" finished-at="2022-03-12T18:01:14 UYT">
+        <test-method status="PASS" signature="addBookUsingHashMapAsPayload(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBookUsingHashMapAsPayload" duration-ms="1767" started-at="2022-03-12T18:28:58 UYT" data-provider="BooksData" finished-at="2022-03-12T18:29:00 UYT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[npjqyvasme]]>
+                <![CDATA[vozyhcxhgp]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[3349]]>
+                <![CDATA[7252]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addBookUsingHashMapAsPayload -->
-        <test-method status="PASS" signature="addBookUsingHashMapAsPayload(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBookUsingHashMapAsPayload" duration-ms="1815" started-at="2022-03-12T18:01:14 UYT" data-provider="BooksData" finished-at="2022-03-12T18:01:16 UYT">
+        <test-method status="PASS" signature="addBookUsingHashMapAsPayload(java.lang.String,int)[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBookUsingHashMapAsPayload" duration-ms="1814" started-at="2022-03-12T18:29:00 UYT" data-provider="BooksData" finished-at="2022-03-12T18:29:02 UYT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[kuswbwkiui]]>
+                <![CDATA[ainloaolsi]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[703]]>
+                <![CDATA[2518]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addBookUsingHashMapAsPayload -->
-        <test-method status="PASS" signature="deleteBook()[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="deleteBook" duration-ms="11105" started-at="2022-03-12T18:01:16 UYT" finished-at="2022-03-12T18:01:27 UYT">
+        <test-method status="PASS" signature="addBookUsingHashMapFromExcelAsPayload()[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="addBookUsingHashMapFromExcelAsPayload" duration-ms="2669" started-at="2022-03-12T18:29:02 UYT" finished-at="2022-03-12T18:29:04 UYT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addBookUsingHashMapFromExcelAsPayload -->
+        <test-method status="PASS" signature="deleteBook()[pri:0, instance:libraryAPITests.DynamicJson@3e57cd70]" name="deleteBook" duration-ms="12701" started-at="2022-03-12T18:29:04 UYT" finished-at="2022-03-12T18:29:17 UYT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteBook -->
