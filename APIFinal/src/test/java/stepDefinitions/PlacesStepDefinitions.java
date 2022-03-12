@@ -40,6 +40,17 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 				.body(testDataBuilder.createPlaceObject(address, name, latitude, longitude));
 	 }
 	 
+	 @Given("DeletePlace Payload")
+	 public void deletePlace_Payload() {
+		 // Set request and response builders
+		 this.setRequestAndResponseBuilder();
+			 
+		// Define request to execute
+		this.requestSpec = given()
+				.spec(this.requestSpec)
+				.body(testDataBuilder.getDeletePlacePayload(this.utils.getJsonPath(this.response, "place_id")));
+	 }
+	 
 	 @When("user calls the {string} with {string} http request")
 	 public void user_calls_the_with_post_http_request(String resource, String httpMethod) {
 	     APIResources apiResource = APIResources.valueOf(resource);
@@ -59,14 +70,13 @@ public class PlacesStepDefinitions extends BaseStepDefinitions{
 	 
 	 @And("scope in response body is {string}")
 	 public void scope_in_response_body_is_something(String scope) {
-		 AddPlaceResponse addPlace = this.response.as(AddPlaceResponse.class);
-		 assertEquals(addPlace.getScope(), scope);
+		 AddPlaceResponse addPlaceResponse = this.response.as(AddPlaceResponse.class);
+		 assertEquals(addPlaceResponse.getScope(), scope);
 	 }
 	 
 	 @And("verify that {string} created maps to {string} using {string}")
      public void verify_that_created_maps_to_using(String placeIdQP, String placeName, String resource){
-	
-		 // Set request
+		// Set request
 		 this.requestSpec = given().spec(this.requestSpec)
 				 			.queryParam(placeIdQP, this.utils.getJsonPath(this.response, placeIdQP));
 		 

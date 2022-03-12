@@ -1,12 +1,15 @@
 Feature: Validating Place API's
 
-Scenario: Verify if Place is being succesfully added using the AddPlaceAPI
+Scenario: Verify that after register a place then the place can be deleted
 Given a valid AddPlace payload
 When user calls the "AddPlaceAPI" with "post" http request
 Then the API call got success with status code 200
 And "status" in response is "OK"
 And scope in response body is "APP"
-And verify that "place_id" created maps to "Frontline house" using "GetPlaceAPI"
+Given DeletePlace Payload
+When user calls the "DeletePlaceAPI" with "post" http request
+Then the API call got success with status code 200
+And "status" in response is "OK"
 
 Scenario Outline: Verify if Place is being succesfully added using the AddPlaceAPI
 Given a valid AddPlace payload with "<address>" "<name>" <latitude> <longitude>
